@@ -48,3 +48,13 @@ function charC(str) {
 }
 
 console.log(charC('hello'));
+
+function charCount(str) {
+    let count = {};
+    for (let letter of str) {
+        count[letter] = (count[letter] || 0) + 1;
+        console.log(count[letter])
+    }
+    console.log(count);
+}
+

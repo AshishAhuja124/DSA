@@ -53,3 +53,23 @@ function anagram(string1, string2){
       return true
   }
   console.log(anagram2('anagram','nagaram'), 'is truue')
+
+  function anagram2(first, second ) { 
+    if(first.length !== second.length) return false;
+    let counter = {};
+    for(let letter of first) {
+        counter[letter] = (counter[letter] || 0) + 1
+        // counter[letter] ? counter[letter] +=1 : counter[letter]
+        console.log(counter[letter])
+    }
+    for(let items of second) {
+        if(!counter[items]) return false
+        counter[items] -=1;
+    }
+    return true
+}
+
+    
+console.log(anagram2('anagram','nagaram'), 'is truue')
+
+// Time complexity is o(n)
