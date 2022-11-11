@@ -4,20 +4,21 @@
 //([4,2,1,6],1) //6
 //General solution but not preferred
 // function maxSubArraySum(arr, num) {
-//     if(num > arr.length ) {
-//         return null
-//     }
-//     var max = -Infinity;
-//     for(let i = 0; i < arr.length - num + 1; i ++) {
-//         temp = 0;
-//         for(let j = 0; j< num; j++) {
-//             temp += arr[i + j];
+//     if(num > arr.length) {
+//         throw new Error ("Number should be less than lenght of array")
+//     }else {
+//         let max = 0;
+//         for(let i = 0; i< arr.length -num+1; i++) {
+//             let temp = 0;
+//             for(let j = 0; j < num; j++) {
+//                 temp += arr[i + j];
+//             }
+//             if(temp > max) {
+//                 max = temp;
+//             }
+//             console.log(max,temp)
 //         }
-//          if(temp > max) {
-//              max = temp;
-
-//          }
-//          console.log(temp, max);
+//         return max;
 //     }
 
 // }
@@ -26,21 +27,23 @@
 //Refactor using Sliding window pattern - Time complexity - O(n)
 
 function maxSubArraySum(arr, num) {
-    if (num > arr.length) return null;
-    let maxSum = 0;
     let tempSum = 0;
+    let maxSum = 0;
+    if (arr.length < num) {
+        throw new Error("Number should be less than lenght of array")
+    }
     for (let i = 0; i < num; i++) {
         maxSum += arr[i];
-        console.log(maxSum)
+        console.log(maxSum,'max')
     }
     tempSum = maxSum;
-    for (let i = num; i < arr.length; i++) {
-        tempSum = tempSum - arr[i - num] + arr[i];
-        maxSum = Math.max(maxSum, tempSum);
-        console.log(tempSum,maxSum,"temp,max")
+    for(let i =0; i< num; i++) {
+        tempSum = (tempSum -arr[i - num] + arr[i]);
+        if(tempSum > maxSum) {
+            maxSum = tempSum;
+        }
     }
-
-    return maxSum;
+    return maxSum
 }
 
-console.log(maxSubArraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 6))
+console.log(maxSubArraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3))
