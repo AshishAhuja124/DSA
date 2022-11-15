@@ -4,11 +4,8 @@
 //output : 3
 //Explanation: The answer is "abc", with the length of 3.
 
-//We can follow sliding window pattern for this kind of problem
-//let end = 0;
-//let start = 0;
-//let maxLength = 0;
-
+//We can follow sliding window pattern for this kind of problem  
+// Time complexity - O(n)
 //working
 //Final string - abcabcbb - length (7)
 
