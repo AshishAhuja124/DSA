@@ -34,3 +34,9 @@ countDown(3);
 //num-- = 0
 //CountDonw(0)
 //Print all done
+
+function sumRange(num) {
+    if(num ===1) return 1;
+    return num + sumRange(num - 1)
+}
+console.log(sumRange(4))
