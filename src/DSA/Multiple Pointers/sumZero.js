@@ -35,7 +35,7 @@
 //  console.log(sumZero([-3,-2,1,0])); Time complexity O(n2)
 
 // Using multiple pointers
-////Refactor to two pointers method : TIme complexity: O(n) Space compexity : O(1)
+//Refactor to two pointers method : TIme complexity: O(n) Space compexity : O(1)
 
 function isSumZero(arr) {
     let left = 0;
