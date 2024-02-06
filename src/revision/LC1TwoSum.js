@@ -82,10 +82,8 @@ var twoSum = function(nums, target) {
         let sum = sortedNums[left] + sortedNums[right];
         if(sum === target) {
             // Find the indices in the original array
-            const indexLeft = nums.indexOf(sortedNums[left]);
-            const indexRight = nums.lastIndexOf(sortedNums[right]);
-            console.log(indexLeft, indexRight)
-            return [sortedNums[left], indexRight];
+           
+            return [sortedNums[left], sortedNums[right]];
         } else if(sum > target) {
             right--;
         } else {
