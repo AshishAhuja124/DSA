@@ -44,3 +44,14 @@ function unique(arr) {
 }
 console.log(unique([1,1,2,3,4,5,5,6,7]),'Unique count')
 //Time complexity o(n)
+
+//using set 
+
+function uni(arr) {
+    let uniqueArr = new Set(arr);
+    // console.log(uniqueArr);
+    return uniqueArr.size
+}
+
+const res1 = uni([1,2,2,3,4,5,5,6,7,7,8])
+console.log(res1,'res')
