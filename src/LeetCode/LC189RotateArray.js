@@ -56,3 +56,12 @@ function rotate(nums, k){
 
 const res = (rotate([1,2,3,4,5,6,7],3))
 console.log(res)
+
+//Another solution
+
+const arr1 = [1, 3, 6, 5, 4];
+const k = 2; // Number of elements to rotate
+
+const rotatedArr1 = [...arr.slice(k), ...arr.slice(0, k)];
+
+console.log(rotatedArr1); // Output: [6, 5, 4, 1, 3]

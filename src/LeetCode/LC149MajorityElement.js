@@ -22,3 +22,24 @@ var majorityElement = function(nums) {
         }
     }
 };
+
+
+function majorityElement(nums) {
+    const count = {};
+
+    nums.forEach(num => {
+        count[num] = (count[num] || 0) + 1;
+    });
+
+    let majority;
+    let maxCount = 0;
+
+    for (const num in count) {
+        if (count[num] > maxCount) {
+            majority = num;
+            maxCount = count[num];
+        }
+    }
+
+    return majority;
+}
