@@ -10,7 +10,7 @@
 
 function maxSubArray(nums) {
     let temp = 0
-    let max = nums[0];
+    let max = -Infinity;
 
     for(let i=0; i< nums.length; i++) {
         temp += nums[i];

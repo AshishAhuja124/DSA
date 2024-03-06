@@ -46,5 +46,37 @@ function maxSubArraySum(arr, num) {
     return maxSum
 }
 
-console.log(maxSubArraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3))
+// console.log(maxSubArraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3))
 
+
+//Kadane's algo
+function maxSubarraySum(arr, n) {
+    let maxi = Number.MIN_SAFE_INTEGER; // maximum sum
+    let sum = 0;
+
+    for (let i = 0; i < n; i++) {
+        sum += arr[i];
+        console.log(sum)
+
+        if (sum > maxi) {
+            maxi = sum;
+        }
+
+        // If sum < 0: discard the sum calculated
+        if (sum < 0) {
+            sum = 0;
+        }
+    }
+
+    // To consider the sum of the empty subarray
+    // uncomment the following check:
+
+    //if (maxi < 0) maxi = 0;
+
+    return maxi;
+}
+
+const arr = [2, 6, 9, 2, 1, 8, 5, 6, 3];
+const n = 3
+const maxSum = maxSubarraySum(arr, n);
+console.log("The maximum subarray sum is: " + maxSum);

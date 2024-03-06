@@ -1,4 +1,5 @@
 function maxSubArray(nums) {
+    //Using sliding window kadene's algo
     let temp = 0
     let max = -Infinity;
 
