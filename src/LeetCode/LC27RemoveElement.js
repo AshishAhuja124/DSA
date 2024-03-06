@@ -11,20 +11,21 @@ function removeEle(nums,val) {
                 nums[i] = nums[j];
                 i++;
             }
-        }console.log(nums)
+        }
+        // console.log(nums)
         return i;
     }
     else {
         throw new Error("Array is empty");
     }
 }
-console.log(removeEle([3,2,2,3],3));
+// console.log(removeEle([3,2,2,3],3));
 
 //Using filter 
 
-// function remove(nums,val) {
-//     nums = nums.filter((el => el !== val));
-//     console.log(nums);
-//     return nums
-// }
-// console.log(remove([3,2,2,3],3))
+function remove(nums,val) {
+    nums = [...nums.filter((el => el !== val))];
+    console.log(nums);
+    return nums
+}
+console.log(remove([3,2,2,3],3))
