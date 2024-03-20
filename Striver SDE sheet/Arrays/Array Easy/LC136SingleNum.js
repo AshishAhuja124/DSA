@@ -4,14 +4,18 @@ var singleNumber = function(nums) {
 
     for(let val of nums) {
         counter[val] = ((counter[val] || 0) + 1)
+        if(counter[val] === 1) {
+            return val
+        }
     }
     console.log(counter);
-    for(let key in counter) {
-        if(counter[key] === 1) {
-            return parseInt(key);
-        }
-        // console.log(counter[key])
-    }
+    
+    // for(let key in counter) {
+    //     if(counter[key] === 1) {
+    //         return parseInt(key);
+    //     }
+    //     // console.log(counter[key])
+    // }
 };
 
 console.log(singleNumber([4,1,2,1,2]))
