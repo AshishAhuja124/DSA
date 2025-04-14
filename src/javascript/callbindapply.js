@@ -23,11 +23,11 @@ console.log(bindPrintFullName);  //Ashish Ahuja Hyderabad,India
 bindPrintFullName();
 
 
-// Bind is a method available on every JavaScript function.
-// It is used to permanently set the value of this inside a function.
+    // Bind is a method available on every JavaScript function.
+    // It is used to permanently set the value of this inside a function.
 
-// Unlike call and apply, bind does not execute the function immediately.
-// Instead, it returns a new function that we can call later with the correct this context.
+    // Unlike call and apply, bind does not execute the function immediately.
+    // Instead, it returns a new function that we can call later with the correct this context.
 
 
 // Method	What it does	                                        When it runs
