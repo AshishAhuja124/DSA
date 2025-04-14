@@ -32,3 +32,48 @@ function missing(arr) {
 console.log(missing([3,0,1]))  //2
 
 //time complexity O(n^2) and space complexity O(1)
+
+//Optimal solution
+// Approach 1: Using sum formula
+
+// The sum of the first n natural numbers is given by the formula n*(n+1)/2.
+
+function missingOptimal(arr) {
+    let n = arr.length; 
+
+    let sum = (n*(n+1))/2;
+
+    let sumofArray = 0;
+
+    for(let ele of arr) {
+        sumofArray += ele
+    }
+    console.log(sumofArray)
+
+    return sum - sumofArray
+}
+
+console.log(missingOptimal([3,0,1]))
+
+//time complexity O(n) and space complexity O(1)
+
+//XOR approach
+
+function missingXor(arr) {
+    let xor1 = 0;
+    let n = arr.length;
+
+    for(let i = 0; i<=n; i++) {
+        xor1 = xor1 ^ i; //XOR of all numbers from 0 to n
+    }
+
+    for(let num of arr) {
+        xor1 = xor1 ^ num; //XOR of all numbers in the array
+    }
+
+    return xor1; //XOR of the two results will give the missing number
+}
+
+console.log(missingXor([3,0,1])) //2
+
+//time complexity O(n) and space complexity O(1)
