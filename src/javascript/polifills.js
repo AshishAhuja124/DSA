@@ -37,3 +37,28 @@ Array.prototype.myFilter = function(cb) {
 
 var myFilterLogic = arr.myFilter(x => x > 3);
 console.log(myFilterLogic)
+
+//-----------------------bind------------
+
+let obj1 = {
+    fName: "Ashish",
+    lName: "Ahuja"
+}
+
+let printFullName = function() {
+    console.log(this.fName + " " + this.lName)
+}
+
+let printMyName = printFullName.bind(obj1);
+printMyName();
+
+Function.prototype.myBind = function(context, ...args1) {
+    const fn = this;
+
+    return function(...args2) {
+      return fn.apply(context, [...args1, ...args2]);
+    };
+  };
+
+let printMyName2 = printFullName.myBind(obj1);
+printMyName2()
