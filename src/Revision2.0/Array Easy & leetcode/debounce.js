@@ -16,3 +16,19 @@ const debounceImplement = (fn, d) => {
 }
 
 const betterFunction = debounceImplement(getData, 300);
+
+
+//throttle
+let throttle = (fn, limit) => {
+    let flag = true;
+
+    return function(...args) {
+        if(flag) {
+            fn.apply(this, args);
+            flag = false
+            setTimeout(() => {
+                flag = true
+            }, limit)
+        }
+    }
+}
