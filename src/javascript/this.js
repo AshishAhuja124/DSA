@@ -1,28 +1,47 @@
-// "use strict"
-//this in global
-// console.log(this) //window
+// // "use strict"
+// //this in global
+// // console.log(this) //window
 
 
-//this called from a function
-// function gfFunction() {
-//     console.log(this) //window in non strict , undefined in strict
+// //this called from a function
+// // function gfFunction() {
+// //     console.log(this) //window in non strict , undefined in strict
+// // }
+
+// // gfFunction();
+
+// //called with obj
+
+// let bfObj = {
+//     name: "Ashish",
+//     age: 21,
+//     gfFunction: function () {
+//         console.log(this) //bfobj
+//     }
 // }
 
-// gfFunction();
+// // bfObj.gfFunction();
 
-//called with obj
+// //called with window by passinf ref
 
-let bfObj = {
-    name: "Ashish",
-    age: 21,
-    gfFunction: function () {
-        console.log(this) //bfobj
+// const gfrefFun = bfObj.gfFunction();
+// gfrefFun(); // window
+
+
+const obj = {
+    a: 10,
+    x: function() {
+        console.log(this) //obj
     }
 }
 
-// bfObj.gfFunction();
+obj.x();
 
-//called with window by passinf ref
+const obj2 = {
+    a: 10,
+    x: () => {
+        console.log(this) //window
+    }
+}
 
-const gfrefFun = bfObj.gfFunction();
-gfrefFun(); // window
+obj.x();
